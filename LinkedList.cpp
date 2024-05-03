@@ -68,8 +68,10 @@ bool LinkedList::find_and_delete(int target) {
 
 	while (currNode->link != NULL){
 		if (currNode->link->data == target){
-			Node * temp = currNode->link->link;
+			Node * temp = currNode->link;
 			currNode->link = currNode->link->link;
+			delete temp;
+
 			return true;
 		}
 		currNode=currNode->link;
