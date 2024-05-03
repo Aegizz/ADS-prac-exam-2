@@ -70,9 +70,9 @@ bool LinkedList::find_and_delete(int target) {
 		if (currNode->link->data == target){
 			Node * temp = currNode->link->link;
 			currNode->link = currNode->link->link;
-			delete temp;
 			return true;
 		}
+		currNode=currNode->link;
 	}
 	return false;
 }
